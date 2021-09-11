@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.top{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(245, 245, 245);
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+    font-family: 'Josefin Sans', sans-serif;
+    overflow: hidden;
+    transition: all 1s;
+    border-bottom: 2px solid rgba(200,200,200,0.5);
+  box-shadow: 10px 1px 8px 1px #998e8e;
+}
+.topLeft,.topRight{
+   flex: 3;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.topImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 35px;
+    cursor: pointer;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+.topIcon{
+    font-size: 20px;
+    margin-left: 10px;
+    color: #444;
+    cursor: pointer;
+}
+.topCenter{
+  flex: 6;
+}
+.topList{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.topListItem{
+    margin-right: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 300;
+}
+.topListItem :hover{
+     color: cornflowerblue;
+}
+.topSearchIcon{
+    font-size: 18px;
+    color: #666;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.topLeft >h1{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: inherit;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 4px #000000;
+}
+.topLeft{
+    display: flex;
+    justify-content: left;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+}
+.hamburger{
+    display: none;
+}
+.topListItem:hover{
+    color: cornflowerblue;
+}
+.topLeft img{
+    width: 40px;
+    height:40px;
+}
+
+@media screen and (max-width: 750px){
+    .hamburger{
+       float: right;
+        display: block;
+    }
+    .topCenter ,.topRight{
+        display: none;
+        transition: all 0.3s;
+    }
+    .top.responsive{
+        width: 100vw;
+        position: relative;
+        display: block;
+        flex-direction: column;
+        background-color: rgb(255, 255, 255);
+        height:fit-content;
+    }
+    .top{
+        transition: all .1s;
+    }
+    .hamburger{
+              font-size: 30px;
+              position: absolute;
+              right: 10px;
+              top: 0;
+              cursor: pointer;
+              border: 1px solid rgb(0, 0, 0,50%);
+              padding: 3px;
+    }
+    .hamburger:hover{
+        color: rgb(66, 119, 209);
+    }
+    .responsive.topCenter{
+        display: flex;
+        background-color: rgb(255, 255, 255);
+        flex-direction: column;
+    }
+    .responsive.topRight{
+        display: flex;
+        background-color: rgb(255, 255, 255);
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .topList{
+        display: flex;
+        flex-direction: column;
+    }
+    .topListItem{
+        width: 100%;
+        float: left;
+    }
+    .topListItem:hover{
+        color: cornflowerblue;
+    }
+    .topImg{
+        position: absolute;
+        top: 0;
+        right: 15px;
+    }
+    .topLeft{
+        justify-content: left;
+    }
+}

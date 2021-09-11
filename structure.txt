@@ -1,0 +1,3 @@
+Project
+    - frontend/client(git)
+    - backend/server(mongo,express,node)(git)
