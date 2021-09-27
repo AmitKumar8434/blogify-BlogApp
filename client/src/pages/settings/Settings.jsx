@@ -75,7 +75,7 @@ export default function Settings() {
                 <form className="settingsForm" onSubmit={handleSubmit}>
                     <label>Profile Picture</label>
                     <div className="settingsPP">
-                <img className="" src={user.profilePic}
+                <img className="" src={user.profilePic?user.profilePic:"./img/user.png"}
                     alt=""
                 />
                     <label htmlFor="fileInput">

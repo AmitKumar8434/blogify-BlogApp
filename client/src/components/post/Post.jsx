@@ -3,13 +3,18 @@ import {Link} from "react-router-dom";
 
 export default function Post({ post }) {
     // const PF = "https://blogifyamit.herokuapp.com/images/";
+
+
     return (
+        <div className="post-wrapper">
         <div className="post" >
             {post.photo && (
+                <Link className="link" to={`/post/${post._id}`}>
                 <img className="postImg"
                     src={post.photo}
                     alt=""
                 />
+                </Link>
             )}
             <div className="postInfo">
                 <div className="postCats">
@@ -33,6 +38,7 @@ export default function Post({ post }) {
                 <span className="postDate">{ new Date(post.createdAt).toDateString()}</span>
             </div>
             <p className="postDesc">{ post.desc}</p>
-        </div>
+            </div>
+            </div>
     )
 }

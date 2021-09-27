@@ -1,6 +1,6 @@
 import {axiosInstance} from "../../config";
 // import axios from "axios";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./login.css";
@@ -9,10 +9,14 @@ import Footer from "../../components/footer/footer";
 export default function Login() {
     const userRef = useRef();
     const passwordRef = useRef();
+    const [logging, setLogging] = useState(false);
+    const [invalid, setInvalid] = useState(false);
     const {dispatch, isFetching } = useContext(Context);
 
     
     const handleSubmit = async (e) => {
+        setLogging(true);
+        setInvalid(false);
         e.preventDefault()
         dispatch({ type: "LOGIN_START" });
         try {
@@ -21,7 +25,10 @@ export default function Login() {
                password: passwordRef.current.value,
             })
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+            setLogging(false);
         } catch (err) {
+            setInvalid(true);
+            setLogging(false);
             dispatch({ type: "LOGIN_FAILURE"});
         }
     }
@@ -45,7 +52,9 @@ export default function Login() {
                     placeholder="Enter your Password..."
                     ref={passwordRef}
                 />
-                <button className="loginButton" type="submit" disabled={isFetching}>Login</button>      
+                    <button className="loginButton" type="submit" disabled={isFetching}>Login</button> 
+                    {logging && <span style={{ color: "green", textAlign: "center", marginTop: "20px" }} > Logging in...</span>}  
+                    {invalid && <span style={{color:"red",textAlign:"center",marginTop:"20px"}} > Invalid Credentials!!</span>}
             </form>
             <button className="loginRegisterButton">
                 <Link to="/register" className="link">REGISTER</Link>

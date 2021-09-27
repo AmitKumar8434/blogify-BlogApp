@@ -16,7 +16,7 @@ const Home = () => {
         const fetchPosts = async () => {
             const res = await axiosInstance.get("/posts"+search)
             setPosts(res.data);
-            // console.log(res.data);
+            const u = await axiosInstance.get("/posts"+search)
         }
         fetchPosts()
     },[search])

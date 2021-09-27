@@ -24,7 +24,7 @@ const TopBar = () => {
             <div className="topLeft">
                 <img className="titleImg" src="./img/title.png" alt="title" />
                 <Link to="/" className="link">
-                <h1>BlogifY</h1>
+                <h1>BLOGIFY</h1>
                 </Link>
             </div>
             <div className={mobile?"topCenter responsive":"topCenter"}>
@@ -50,7 +50,7 @@ const TopBar = () => {
                 {
                     user ? (
                         <Link to="/settings">
-                            <img className="topImg" src={user.profilePic}
+                            <img className="topImg" src={user.profilePic? user.profilePic: "./img/user.png"}
                                 onClick={()=>setToggle(true)}
                         alt=""
                             />
