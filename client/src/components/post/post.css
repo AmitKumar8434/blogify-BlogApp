@@ -4,14 +4,13 @@
     box-sizing: border-box;
 }
 .post-wrapper{
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 .post{
-    width: 35rem;
+    width: 33rem;
     height: max-content;
-    min-height: 30rem;
     margin-bottom: 50px;
     display: flex;
     flex-direction: column;
@@ -28,7 +27,7 @@
 }
 .postImg{
     width: 100%;
-    height: 400px;
+    height: 350px;
     object-fit: cover;
     border-radius: 10px;
 }
